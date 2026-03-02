@@ -6,17 +6,15 @@ using UnityEngine.SceneManagement;
 public class GeneratorPodloza : MonoBehaviour
 {
     public Camera kameraGlowne;
-    public Transform punktStartowy;                 // Punkt, od ktorego rozpocznie sie generowanie naszego podloza
-    public KafelekPlatformy prefabKafelka;
+    public Transform punktStartowy;                 
     public float predkoscRuchu = 12;
-    public int liczbaWstepnychKafelkow = 15;       // Ile kafelkow ma byc wygenerowanych na starcie naszej gry
-    public int kafelkiBezPrzeszkod = 3;            // Ile pierwszych kafelkow ma byc bez przeszkod
+    public int liczbaWstepnychKafelkow = 15;      
+    public int kafelkiBezPrzeszkod = 3;          
 
     List<KafelekPlatformy> wygenerowaneKafelki = new List<KafelekPlatformy>();
     int indeksKafelkaDoAktywacji = -1;
 
-    [HideInInspector]                             //Zmienna musi byc publiczna, ale nie chcemy zeby podczas projektowania gry przypadkiem zmienic ja w Inspectorze UNITY
-    public bool graSkonczona = false;
+    [HideInInspector]                             
     static bool graRozpoczeta = false;
     float wynik = 0;
     public static GeneratorPodloza instancja;
@@ -59,16 +57,15 @@ public class GeneratorPodloza : MonoBehaviour
         if (!graSkonczona && graRozpoczeta)
         {
             transform.Translate(
-                -wygenerowaneKafelki[0].transform.forward *                //wektor kierunku pierwszego kafelka
-                Time.deltaTime * (predkoscRuchu + (wynik / 500)),        //czas od ostatniej klatki (umozliwia plynny ruch niezaleznie od FPS)
-                Space.World                                                 //predkosc, ktora rosnie wraz z wynikiem = wiekszy wynik, tym szybciej obiekt sie porusza
-            );
+                -wygenerowaneKafelki[0].transform.forward *                
+                Time.deltaTime * (predkoscRuchu + (wynik / 500)),        
+                Space.World                                                 
 
             wynik += Time.deltaTime * predkoscRuchu;
 
             if (!scenaJuzZmieniona && progWynikuDoZmianySceny > 0 && wynik >= progWynikuDoZmianySceny)
             {
-                scenaJuzZmieniona = true;          // zabezpieczenie przed wywolywaniem sceny w kazdej klatce
+                scenaJuzZmieniona = true;          
                 if (!string.IsNullOrEmpty(nazwaKolejnejSceny))
                 {
                     SceneManager.LoadScene(nazwaKolejnejSceny);
@@ -100,8 +97,8 @@ public class GeneratorPodloza : MonoBehaviour
                     Scene scena = SceneManager.GetActiveScene();
                     //SceneManager.LoadScene(scena.name);
                     SceneManager.LoadScene("TheEnd");
-                    PlayerPrefs.SetInt("Wynik gry", (int)wynik);       //zapis wyniku do schowka, dla klucza "Wynik gry"
-                    PlayerPrefs.Save();                                //wymuszony zapis na dysku, przerzut miedzy sesjami w Unity
+                    PlayerPrefs.SetInt("Wynik gry", (int)wynik);      
+                    PlayerPrefs.Save();                                
 
                 }
                 else
@@ -115,8 +112,7 @@ public class GeneratorPodloza : MonoBehaviour
     void OnGUI()
     {
 
-        GUI.skin.label.fontSize = 24;                   // 2 razy wieksza czcionka, default 12pxs
-
+        GUI.skin.label.fontSize = 24;                   
         if (graSkonczona)
     {
         GUI.color = Color.red;
@@ -137,3 +133,4 @@ public class GeneratorPodloza : MonoBehaviour
     GUI.Label(new Rect(5, 5, 300, 150), "Wynik: " + ((int)wynik));
     }
 }
+
