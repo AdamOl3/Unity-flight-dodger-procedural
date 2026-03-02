@@ -19,7 +19,7 @@ public class Gracz : MonoBehaviour
     {
         rigidbodyGracza = GetComponent<Rigidbody>();
         rigidbodyGracza.constraints = RigidbodyConstraints.FreezeRotation;
-        rigidbodyGracza.useGravity = false; // uzywamy wlasnej grawitacji dla lepszej grywalnosci
+        rigidbodyGracza.useGravity = false; 
         domyslnaSkala = transform.localScale;
     }
 
@@ -42,7 +42,6 @@ public class Gracz : MonoBehaviour
 
     void FixedUpdate()
     {
-        // sztuczna grawitacja dziala tylko gdy NIE naciskamy spacji (lot naszym statkiem do gory)
         if (!Input.GetKey(KeyCode.Space))
         {
             rigidbodyGracza.AddForce(new Vector3(0, -grawitacja * rigidbodyGracza.mass, 0));
@@ -69,3 +68,4 @@ public class Gracz : MonoBehaviour
         }
     }
 }
+
