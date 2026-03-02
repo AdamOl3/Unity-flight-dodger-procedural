@@ -21,6 +21,6 @@ This repository focuses on the **C# programming** and logic behind the game. Hea
 * **Focus:** Scripting, Game Logic, Optimization.
 
 ## Screenshots
-| Main Menu | Urban Flight | Forest Theme |
-| :---: | :---: | :---: |
-| ![Menu](screenshots/Obraz1.png) | ![Urban](screenshots/Obraz2.png) | ![Forest](screenshots/Obraz3.png) |
+| Main Menu | Urban Flight | Forest Theme | End of game |
+| :---: | :---: | :---: | :---: |
+| ![Menu](screenshots/Obraz1.png) | ![Urban](screenshots/Obraz2.png) | ![Forest](screenshots/Obraz3.png) | ![End](screenshots/Obraz4.png) |
