@@ -19,3 +19,8 @@ This repository focuses on the **C# programming** and logic behind the game. Hea
 * **Engine:** Unity
 * **Language:** C#
 * **Focus:** Scripting, Game Logic, Optimization.
+
+## Screenshots
+| Main Menu | Urban Flight | Forest Theme |
+| :---: | :---: | :---: |
+| ![Menu](screenshots/Obraz1.png) | ![Urban](screenshots/Obraz2.png) | ![Forest](screenshots/Obraz3.png) |
