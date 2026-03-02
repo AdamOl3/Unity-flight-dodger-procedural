@@ -6,7 +6,7 @@ public class TheEnd : MonoBehaviour
 
     void Start()
     {
-        wynikKoncowy = PlayerPrefs.GetInt("Wynik gry", 0); // 0 to wartosc domyslna jesli nic nie zapisano
+        wynikKoncowy = PlayerPrefs.GetInt("Wynik gry", 0);
     }
 
     void OnGUI()
@@ -16,3 +16,4 @@ public class TheEnd : MonoBehaviour
         GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 300, 100), "Twoj wynik koncowy: " + wynikKoncowy);
     }
 }
+
