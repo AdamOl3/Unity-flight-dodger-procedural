@@ -3,7 +3,7 @@
 ## Gameplay Video
 I have included a gameplay demonstration to show the mechanics in action without the need to build the project.
 
-[Click here to watch the gameplay video](Flight_Dodger.mp4)
+[Click here to watch the gameplay video](Flight_Dodger_demo.mp4)
 
 ---
 
